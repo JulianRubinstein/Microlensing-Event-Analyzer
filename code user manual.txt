@@ -1,0 +1,12 @@
+Code user manual
+This manual is to explain the general purpose of the algorithms and how to use them.
+
+External functions
+funcfit – This function accepts a data set and returns a vector of a,b,c paramaters for a parabola fit of the form y = a*x^2 + b*x^2 +c
+noisesim – This function accepts a data set and returns the same data set with an additional normal noise added to each data point.
+matrices – This function accepts a,b,c,da,db,dc and returns t0,te,uo,dto,dte,duo and a p_inv matrix which does the translation between the errors of the paramaters
+algorithm – This function accepts an initial guess for the paramaters t0,te,uo and their errors and then attempts to minimize the x_2 in the parameter space. It then returns the final values for the paramaters.
+
+Main scripts
+simulated data only parabola – This is a script which takes a data set and fits a sampnum number of times a parabola to the data set. It then calculates an average of a, b, c and calculates the cumulative error. Finally it presents a histogram of the values of a,b,c and compares them to their true analytic value.
+simulated data parabola and algorithm – This is a script which takes a data set and fits a parabola to the data set it then takes these parameters and sends them to function “algorithm” which is explained above. It repeats this process a sampnum number of times. It then calculates an average of te,to,u0 and calculates their cumulative error. These parameters are then compared to the actual values which are presented at the beginning of the script.
